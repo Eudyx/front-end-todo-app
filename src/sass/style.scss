@@ -1,0 +1,43 @@
+@use 'mixins';
+@use 'register';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+// Colors
+$primary: #FC5A62;
+$secondary: #3165E4;
+$info: #605F5E;
+
+// Radius
+$card-border-radius: 0.75rem; //card border radius
+
+// padding
+$card-spacer-x: 30px; // card horizontal padding
+$card-spacer-y: 45px; // card vertical padding
+
+
+body {
+    background-image: url('background-img.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50% 65%;
+}
+
+@media screen and (max-width: 300px) {
+    $card-spacer-x: 20px; // card horizontal padding
+    $card-spacer-y: 23px; // card vertical padding
+}
+
+@media screen and (max-width: 720px) {
+    body {
+        background-size: 200%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        background-size: 300%;
+    }
+}
+
+@import '../../node_modules/bootstrap/scss/bootstrap';
