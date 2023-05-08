@@ -3,6 +3,8 @@ import Button from "../subComponents/Button";
 import Input from "../subComponents/Input";
 import Instructions from "../subComponents/Instructions";
 import axios from "../../api/axios";
+import FormCard from "../subComponents/FormCard";
+import FormContainer from "../subComponents/FormContainer";
 
 const REGISTER_URL = '/register';
 const USER_REGEX = /^[A-z][A-z0-9-_\.]{3,23}$/;
@@ -10,16 +12,8 @@ const NAME_REGEX = /^[A-Z][A-z ]{3,50}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const EMAIL_REGEX = /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
 
-const inputText = Object.freeze({
-  userName: 'Username',
-  pwd: 'Password',
-  confirmPwd: 'Confirm password',
-  email: 'Email',
-  firstname: 'First name',
-  lastname: 'Last name'
-});
 
-const Register = () => {
+const Register = ({ inputText }) => {
 
   const userRef = useRef();
   const pwdRef = useRef();
@@ -106,10 +100,9 @@ const Register = () => {
   }
 
   return (
-    <section className="container d-flex align-items-center justify-content-center">
-      <div className="row col-11 d-flex flex-column align-items-center justify-content-center">
+          <FormContainer>
             <h1 className="text-white main-title mt-5 mb-5" >Things to be <span className="text-secondary">done</span></h1>
-            <div className="card mb-5 col-12 col-sm-9 col-md-8 col-lg-7 col-xl-6 col-xxl-5">
+            <FormCard>
               <form onSubmit={handleSubmit}>
                 {errMsg?.length ? <p>{errMsg}</p> : null}
                 <div className="card-body">
@@ -189,14 +182,13 @@ const Register = () => {
                       />
                     <Instructions inputText={inputText} text={inputText.confirmPwd} focus={matchFocus} valid={validMatch} inputContent={match} />
                   <br />
-                <Button clsName='btn btn-primary text-white w-100'>
+                <Button className='btn btn-primary text-white w-100'>
                   Create
                 </Button>
                 </div>
               </form>
-            </div>
-      </div>
-    </section>
+          </FormCard>
+        </FormContainer>
   )
 }
 
