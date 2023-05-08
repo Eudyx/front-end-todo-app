@@ -12,8 +12,8 @@ $info: #605F5E;
 $card-border-radius: 0.75rem; //card border radius
 
 // padding
-$card-spacer-x: 30px; // card horizontal padding
-$card-spacer-y: 45px; // card vertical padding
+$card-spacer-x: 20px; // card horizontal padding
+$card-spacer-y: 35px; // card vertical padding
 
 
 body {
@@ -28,15 +28,15 @@ body {
     $card-spacer-y: 23px; // card vertical padding
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1144px) {
     body {
-        background-size: 200%;
+        background-size: 350%;
     }
 }
 
 @media screen and (max-width: 700px) {
     body {
-        background-size: 300%;
+        background-size: cover;
     }
 }
 

@@ -41,14 +41,14 @@ body {
   background-position: 50% 65%;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1144px) {
   body {
-    background-size: 200%;
+    background-size: 350%;
   }
 }
 @media screen and (max-width: 700px) {
   body {
-    background-size: 300%;
+    background-size: cover;
   }
 }
 /*!
@@ -4159,16 +4159,16 @@ textarea.form-control-lg {
 }
 
 .card {
-  --bs-card-spacer-y: 45px;
-  --bs-card-spacer-x: 30px;
+  --bs-card-spacer-y: 35px;
+  --bs-card-spacer-x: 20px;
   --bs-card-title-spacer-y: 0.5rem;
   --bs-card-border-width: 1px;
   --bs-card-border-color: var(--bs-border-color-translucent);
   --bs-card-border-radius: 0.75rem;
   --bs-card-box-shadow: ;
   --bs-card-inner-border-radius: calc(0.75rem - 1px);
-  --bs-card-cap-padding-y: 22.5px;
-  --bs-card-cap-padding-x: 30px;
+  --bs-card-cap-padding-y: 17.5px;
+  --bs-card-cap-padding-x: 20px;
   --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
   --bs-card-cap-color: ;
   --bs-card-height: ;
