@@ -34,21 +34,80 @@
     font-size: 34px;
   }
 }
-body {
-  background-image: url("background-img.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: 50% 65%;
+* {
+  font-family: "Poppins", sans-serif;
 }
 
-@media screen and (max-width: 1144px) {
-  body {
-    background-size: 350%;
+#background-img {
+  z-index: -10;
+}
+
+.m-boards {
+  display: grid;
+  grid-template-columns: 24.1% 24.1% 24.1% 24.1%;
+}
+
+.cardBoard {
+  height: 190px;
+}
+
+#newBtn {
+  width: 97.5%;
+  height: 190px;
+}
+
+#recent {
+  display: grid;
+  grid-template-columns: 32.8% 32.8% 32.8%;
+}
+
+#recentBoars {
+  padding-right: 2px;
+}
+
+@media screen and (max-width: 992px) {
+  #recent {
+    grid-template-columns: auto;
+  }
+  #newBtn {
+    width: 100% !important;
+    height: 150px;
+  }
+  .cardBoard {
+    height: 150px;
+  }
+  .m-boards {
+    grid-template-columns: 31.7% 31.7% 31.7%;
+  }
+  #recent {
+    grid-template-columns: 31.7% 31.7% 31.7%;
+  }
+  #recentBoars {
+    padding-right: 0;
   }
 }
-@media screen and (max-width: 700px) {
-  body {
-    background-size: cover;
+@media screen and (max-width: 768px) {
+  .m-boards {
+    grid-template-columns: 48.4% 48.4%;
+  }
+  #recent {
+    grid-template-columns: auto;
+  }
+}
+@media screen and (max-width: 640px) {
+  #background-img {
+    min-width: 100vh;
+  }
+}
+@media screen and (max-width: 576px) {
+  .m-boards {
+    grid-template-columns: auto;
+  }
+  #newBtn {
+    height: 130px;
+  }
+  .cardBoard {
+    height: 130px;
   }
 }
 /*!

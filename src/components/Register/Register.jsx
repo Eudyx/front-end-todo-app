@@ -5,6 +5,7 @@ import Instructions from "../subComponents/Instructions";
 import axios from "../../api/axios";
 import FormCard from "../subComponents/FormCard";
 import FormContainer from "../subComponents/FormContainer";
+import { Link } from 'react-router-dom'
 
 const REGISTER_URL = '/register';
 const USER_REGEX = /^[A-z][A-z0-9-_\.]{3,23}$/;
@@ -68,7 +69,6 @@ const Register = ({ inputText }) => {
     e.preventDefault();
     
     try {
-      console.log('hola');
       const response = await axios.post(REGISTER_URL,
         JSON.stringify({ user: user, email: email, firstname: name, lastname: lastName, password: pwd }),
         {
@@ -182,9 +182,10 @@ const Register = ({ inputText }) => {
                       />
                     <Instructions inputText={inputText} text={inputText.confirmPwd} focus={matchFocus} valid={validMatch} inputContent={match} />
                   <br />
-                <Button className='btn btn-primary text-white w-100'>
+                <Button className='btn btn-primary mb-3 text-white w-100'>
                   Create
                 </Button>
+                  <Link to='/login' className="text-secondary text-decoration-none" >I have an acount</Link>
                 </div>
               </form>
           </FormCard>

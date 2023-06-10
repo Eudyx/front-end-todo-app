@@ -3,6 +3,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
 
+* {
+    font-family: 'Poppins', sans-serif;
+}
 // Colors
 $primary: #FC5A62;
 $secondary: #3165E4;
@@ -15,29 +18,97 @@ $card-border-radius: 0.75rem; //card border radius
 $card-spacer-x: 20px; // card horizontal padding
 $card-spacer-y: 35px; // card vertical padding
 
+// .cardBoard {
+//     display: inline-table;
+// }
+#background-img {
+    z-index: -10;
+}
 
-body {
-    background-image: url('background-img.jpg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: 50% 65%;
+.m-boards {
+    display: grid;
+    grid-template-columns: 24.1% 24.1% 24.1% 24.1%;
+}
+
+.cardBoard {
+    height: 190px;
+}
+
+#newBtn {
+    width: 97.5%;
+    height: 190px;
+}
+
+#recent {
+    display: grid;
+    grid-template-columns: 32.8% 32.8% 32.8%;
+}
+
+#recentBoars {
+    padding-right: 2px;
+}
+
+@media screen and (max-width: 992px) {
+    #recent {
+        grid-template-columns: auto;
+    }
+
+    #newBtn {
+        width: 100%!important;
+        height: 150px;
+    }
+
+    .cardBoard {
+        height: 150px;
+    }
+
+    .m-boards {
+        grid-template-columns: 31.7% 31.7% 31.7%;
+    }
+
+    #recent {
+        grid-template-columns: 31.7% 31.7% 31.7%;
+    }
+
+    #recentBoars {
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .m-boards {
+        grid-template-columns: 48.4% 48.4%;
+    }
+
+    #recent {
+        grid-template-columns: auto;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #background-img {
+        min-width: 100vh;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .m-boards {
+        grid-template-columns: auto;
+    }
+
+    #newBtn {
+        height: 130px;
+    }
+
+    .cardBoard {
+        height: 130px;
+    }
+
 }
 
 @media screen and (max-width: 300px) {
     $card-spacer-x: 20px; // card horizontal padding
     $card-spacer-y: 23px; // card vertical padding
-}
-
-@media screen and (max-width: 1144px) {
-    body {
-        background-size: 350%;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    body {
-        background-size: cover;
-    }
 }
 
 @import '../../node_modules/bootstrap/scss/bootstrap';
